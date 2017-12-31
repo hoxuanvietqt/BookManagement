@@ -6,8 +6,7 @@ Run the application by jar file:
 
 Build jar file and run the application
 - Setup Maven 3.x
-- move to folder project(BookManagement)
-- move to target folder and run command: mvn package
-- run the application by command: java -jar BookManagement-0.0.1-SNAPSHOT.jar
+- move to folder project(BookManagement) and run command: mvn package
+- move to target folder and run the application by command: java -jar BookManagement-0.0.1-SNAPSHOT.jar
 
 Open: http://localhost:8080 and login with email/pass: vietho@gmail.com/123
