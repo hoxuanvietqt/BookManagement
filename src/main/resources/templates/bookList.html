@@ -3,32 +3,38 @@
    <head>
       <meta charset="UTF-8" />
       <title>Book List</title>
+      
+      <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
       <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
    </head>
    <body>
-      <span sec:authorize="isAuthenticated()">
-          | Logged user: <span th:text="${userInfo}"></span> |
-          <a th:href="@{/logout}">Sign Out</a>
-      </span>
-      <h1>Book List</h1>
-      <a href="addBook">Add Book</a>
-      <br/><br/>
-      <div>
-         <table border="1">
-            <tr>
-               <th>Title</th>
-               <th>Author</th>
-               <th>Action</th>
-            </tr>
-            <tr th:each ="book : ${books}">
-               <td ><a th:href="@{'/bookDetail?bookId='+ ${book.bookId}}" th:utext="${book.title}"></a></td>
-               <td th:utext="${book.author}">...</td>
-               <td>
-               	<a th:href="@{'/updateBook?bookId='+ ${book.bookId}}">Edit</a>
-               	<a th:href="@{'/deleteBook?bookId='+ ${book.bookId}}">Delete</a>
-               </td>
-            </tr>
-         </table>
-      </div>
+	   <div>
+	      <span sec:authorize="isAuthenticated()">
+	          | Logged user: <span th:text="${userInfo}"></span> |
+	          <a th:href="@{/logout}">Sign Out</a>
+	      </span>
+	      <h1>Book List</h1>
+	      <a href="addBook">Add Book</a>
+	      <br/><br/>
+	      
+	      <div><input id="search-data" type="text" ></input><input id="search" type="button" value="Search"></input></div>
+	      <br/>
+	      
+	      <table border="1">
+	            <tr>
+	               <th>Title</th>
+	               <th>Author</th>
+	               <th>Action</th>
+	            </tr>
+	            <tbody id="bookContent">
+	            
+	            </tbody>
+	      </table>
+	      <br />
+	      <div id="pagingButton"></div>
+	     </div>
+      <script th:src="@{/js/jquery/jquery-2.1.1.js}"></script>
+      <script th:src="@{/js/main.js}"></script>
+     
    </body>
 </html>

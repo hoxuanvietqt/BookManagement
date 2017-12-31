@@ -1,9 +1,5 @@
-h1 {
-    color:#0000FF;
-}
- 
-h2 {
-    color:#FF0000;
+body {
+	padding: 10px;
 }
  
 table {

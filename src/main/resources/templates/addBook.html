@@ -3,16 +3,11 @@
    <head>
       <meta charset="UTF-8" />
       <title>Add Book</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
       <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
    </head>
    <body>
       <h1>Create a Book:</h1>
-       
-      <!--  
-         In Thymeleaf the equivalent of
-         JSP's ${pageContext.request.contextPath}/edit.html
-         would be @{/edit.html}         
-         -->
           
       <form th:action="@{/addBook}"
          th:object="${book}" method="POST">
@@ -31,7 +26,5 @@
       </form>
        
       <br/>
-      
-       
    </body>
 </html>
